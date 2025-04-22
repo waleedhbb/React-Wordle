@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Wordle from "./components/Wordle";
 
-// Hardcoded solutions array
+// Hardcoded solutions array (to deploy)
 const solutions = [
   { id: 1, word: "ninja" },
   { id: 2, word: "spade" },

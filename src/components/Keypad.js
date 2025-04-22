@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function Keypad({ usedKeys }) {
+export default function Keypad({ usedKeys, onKeyPress }) {
+  // Hardcoded letters
   const letters = [
     { key: "a" },
     { key: "b" },
@@ -33,9 +34,14 @@ export default function Keypad({ usedKeys }) {
   return (
     <div className="keypad">
       {letters.map((l) => {
-        const color = usedKeys[l.key]; // Color based on usedKeys
+        const color = usedKeys[l.key];
         return (
-          <div key={l.key} className={color}>
+          <div
+            key={l.key}
+            className={color}
+            onClick={() => onKeyPress(l.key)} 
+            style={{ cursor: 'pointer' }} 
+          >
             {l.key}
           </div>
         );
